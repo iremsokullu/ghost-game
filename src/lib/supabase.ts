@@ -4,6 +4,10 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
 
+
+console.log("SUPABASE URL:", import.meta.env.VITE_SUPABASE_URL)
+console.log("SUPABASE KEY:", import.meta.env.VITE_SUPABASE_ANON_KEY)
+
 const INVALID_ENV_VALUES = new Set(['', 'undefined', 'null', 'your_supabase_url', 'your-anon-key'])
 
 const isValidEnvValue = (value: string | undefined): value is string => {
