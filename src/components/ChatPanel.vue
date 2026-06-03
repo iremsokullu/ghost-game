@@ -461,6 +461,36 @@ defineExpose({
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 600px) {
+  .chat-header {
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .messages-scroll {
+    padding: 10px !important;
+  }
+
+  .scroll-controls {
+    padding: 6px 3px;
+  }
+
+  .message-bubble {
+    max-width: 100%;
+    font-size: 0.86rem;
+  }
+
+  .chat-input {
+    padding: 10px !important;
+  }
+
+  .chat-compose-row {
+    grid-template-columns: minmax(0, 1fr) 38px 38px;
+    gap: 6px;
+  }
+}
+
 :deep(.v-card) {
   background: linear-gradient(145deg, #151B3D 0%, #1A2351 100%) !important;
   border: 1px solid rgba(255, 107, 53, 0.2);

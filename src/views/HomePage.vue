@@ -722,21 +722,58 @@ onUnmounted(() => {
 }
 
 @media (max-width: 520px) {
+  .home-page {
+    overflow-x: hidden;
+  }
+
+  .home-stage {
+    width: min(100% - 16px, 440px);
+    gap: 12px;
+  }
+
+  .hero-panel {
+    padding: 14px;
+    gap: 14px;
+  }
+
   .primary-actions {
     grid-template-columns: 1fr;
   }
 
   .hero-copy h1 {
-    font-size: 3.2rem;
+    font-size: 2.65rem;
+  }
+
+  .ghost-logo {
+    gap: 5px;
   }
 
   .ghost-logo span {
-    min-width: 42px;
-    min-height: 52px;
+    min-width: 38px;
+    min-height: 48px;
+    padding: 0 5px;
   }
 
   .hero-copy p {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .quick-card,
+  .rooms-panel {
+    padding: 12px;
+  }
+
+  .room-row {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .rule-card {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 8px;
+    padding: 9px;
   }
 }
 </style>

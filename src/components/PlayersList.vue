@@ -210,4 +210,33 @@ const myRoleAlertClass = computed(() => {
   margin-bottom: 8px;
   border-radius: 8px;
 }
+
+@media (max-width: 600px) {
+  :deep(.v-card-title) {
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .role-card-wrap {
+    padding: 8px 8px 2px;
+  }
+
+  .players-list-scroll {
+    padding: 6px 8px 10px !important;
+  }
+
+  :deep(.v-list-item) {
+    margin-bottom: 6px;
+    border-radius: 7px;
+  }
+
+  :deep(.v-list-item-title) {
+    font-size: 0.9rem;
+  }
+
+  :deep(.v-list-item-subtitle) {
+    font-size: 0.78rem;
+  }
+}
 </style>

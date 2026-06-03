@@ -2279,10 +2279,18 @@ onUnmounted(() => {
 }
 
 @media (max-width: 960px) {
+  .game-page {
+    height: auto;
+    min-height: calc(100vh - 64px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
   .game-area {
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(0, 1fr) minmax(280px, 360px) auto;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    overflow: visible;
   }
 
   .game-header {
@@ -2300,10 +2308,26 @@ onUnmounted(() => {
   .game-board {
     border-right: none;
     border-bottom: 1px solid rgba(255, 107, 53, 0.15);
+    min-height: auto;
+    max-height: none;
+    overflow: visible;
   }
 
   .game-chat {
     border-right: none;
+    order: 3;
+    height: 360px;
+    min-height: 320px;
+    max-height: 420px;
+    border-top: 1px solid rgba(255, 107, 53, 0.15);
+  }
+
+  .game-players {
+    order: 2;
+    max-height: 340px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 107, 53, 0.15);
   }
 }
 
@@ -2954,17 +2978,71 @@ onUnmounted(() => {
     min-height: 160px;
   }
 
-  .game-players {
-    max-height: 220px;
-    flex-shrink: 0;
-    overflow: hidden;
+  .action-panel {
+    padding: 14px;
   }
 }
 
 @media (max-width: 600px) {
-  .vote-name {
-    min-width: 64px;
-    max-width: 72px;
+  .game-page {
+    min-height: calc(100vh - 56px);
+  }
+
+  .game-header {
+    align-items: flex-start;
+    padding: 10px 12px;
+  }
+
+  .room-name {
+    font-size: 1.1rem;
+  }
+
+  .room-code {
+    font-size: 0.76rem;
+  }
+
+  .turn-badge {
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .game-board {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .waiting-area {
+    align-items: flex-start;
+    padding: 14px 10px;
+    overflow-y: auto;
+  }
+
+  .waiting-card {
+    padding: 22px 14px;
+  }
+
+  .board-zone--hud {
+    gap: 8px;
+  }
+
+  .score-row {
+    gap: 8px;
+  }
+
+  .score-card {
+    padding: 10px 8px;
+  }
+
+  .score-number {
+    font-size: 1.45rem;
+  }
+
+  .score-label,
+  .score-target {
+    font-size: 0.68rem;
   }
 
   .roles-banner {
@@ -2974,6 +3052,70 @@ onUnmounted(() => {
 
   .role-badge {
     justify-content: center;
+    padding: 7px 10px;
+  }
+
+  .phase-actions {
+    overflow: visible;
+  }
+
+  .action-panel {
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .vote-grid {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .vote-option {
+    min-height: 42px;
+    padding: 9px 10px;
+  }
+
+  .policy-card-grid,
+  .policy-card-grid--two {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .policy-card {
+    min-height: 124px;
+    padding: 14px 10px;
+    gap: 8px;
+  }
+
+  .policy-card-title {
+    font-size: 1.1rem;
+  }
+
+  .policy-card-icon {
+    transform: scale(0.9);
+  }
+
+  .winner-banner-title {
+    font-size: 1.25rem;
+  }
+
+  .winner-banner-subtitle {
+    font-size: 0.84rem;
+  }
+
+  .game-players {
+    padding: 10px;
+    max-height: 330px;
+  }
+
+  .game-chat {
+    height: 340px;
+    min-height: 300px;
+    max-height: 360px;
+  }
+
+  .vote-name {
+    min-width: 64px;
+    max-width: 72px;
   }
 }
 </style>
